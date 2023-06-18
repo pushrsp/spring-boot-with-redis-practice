@@ -22,7 +22,7 @@ public class HelloController {
         return "hello world!";
     }
 
-    @GetMapping("/setX")
+    @GetMapping("/set")
     public String setX(@RequestParam String name) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
         ops.set("test", name);
@@ -30,7 +30,7 @@ public class HelloController {
         return "saved";
     }
 
-    @GetMapping("/getX")
+    @GetMapping("/get")
     public String getX() {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
 
